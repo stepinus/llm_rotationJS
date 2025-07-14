@@ -86,7 +86,7 @@ const llmManager = new LlmManager();
 
 const settings = {
     provider: 'openrouter',
-    model: 'google/gemini-2.0-flash-exp:free',
+    model: 'moonshotai/kimi-k2:free',
     apiKeys: {
         openrouter: ['key1', 'key2', 'key3'] // Multiple keys for rotation
     },
