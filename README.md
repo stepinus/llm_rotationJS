@@ -118,7 +118,7 @@ try {
 ```javascript
 const settings = {
     provider: 'openrouter',
-    model: 'google/gemini-2.0-flash-exp:free',
+    model: 'moonshotai/kimi-k2:free',
     apiKeys: { openrouter: ['key1', 'key2'] },
     siteUrl: 'https://yoursite.com',  // Required
     siteName: 'Your App Name',        // Required
