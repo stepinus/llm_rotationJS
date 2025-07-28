@@ -1,0 +1,41 @@
+{
+  "name": "llm_rotationjs",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">\r   <img src=\"https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white\" />\r   <img src=\"https://img.shields.io/badge/ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black\" />\r   <img src=\"https://img.shields.io/badge/MIT-License-blue?style=for-the-badge\" />\r   <img src=\"https://img.shields.io/badge/Version-1.0.0-green?style=for-the-badge\" />\r </div>",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "tsc && node dist/server.js",
+    "dev:watch": "concurrently \"tsc --watch\" \"nodemon\"",
+    "start": "node dist/server.js",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "prestart": "npm run build",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@google/genai": "^1.11.0",
+    "@huggingface/inference": "^4.5.3",
+    "@mistralai/mistralai": "^1.7.5",
+    "@types/node-fetch": "^2.6.12",
+    "@vitest/ui": "^3.2.4",
+    "cohere-ai": "^7.18.0",
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10",
+    "openai": "^5.10.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

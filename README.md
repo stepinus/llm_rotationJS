@@ -2,6 +2,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/MIT-License-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Version-1.0.0-green?style=for-the-badge" />
@@ -255,6 +256,55 @@ Real-time monitoring of API key health and performance
 Provider-specific optimizations for maximum compatibility
 
 </div>
+
+---
+
+## 🔍 TypeScript Development
+
+This project is built with TypeScript for better development experience and type safety.
+
+### Development Scripts
+
+```bash
+# Build the project
+npm run build
+
+# Build and watch for changes
+npm run build:watch
+
+# Run development server
+npm run dev
+
+# Run development server with auto-restart
+npm run dev:watch
+
+# Start production server
+npm start
+
+# Clean build directory
+npm run clean
+```
+
+### Project Structure
+
+```
+src/
+├── llm_rotation.ts    # Core LLM manager with type definitions
+├── server.ts          # Express server with TypeScript
+dist/                  # Compiled JavaScript output
+├── llm_rotation.js    # Compiled core module
+├── server.js          # Compiled server
+└── *.d.ts            # TypeScript declaration files
+```
+
+### TypeScript Configuration
+
+The project uses a Node.js optimized TypeScript configuration:
+- **Target**: ES2022 for modern Node.js features
+- **Module**: CommonJS for Node.js compatibility
+- **Source Maps**: Enabled for debugging
+- **Declaration Files**: Generated for library usage
+- **Strict Mode**: Enabled for type safety
 
 ---
 
