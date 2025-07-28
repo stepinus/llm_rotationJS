@@ -259,6 +259,60 @@ Provider-specific optimizations for maximum compatibility
 
 ---
 
+## 🐳 Docker Deployment
+
+### Quick Docker Setup
+
+```bash
+# Build the Docker image
+./docker-build.sh
+
+# Or manually:
+docker build -t llm-rotation-server .
+
+# Run with docker-compose (recommended)
+docker-compose up -d
+
+# Or run directly
+docker run -p 3000:3000 \
+  -e OPENROUTER_API_KEY=your_key_here \
+  -e GEMINI_API_KEY=your_key_here \
+  llm-rotation-server
+```
+
+### Environment Variables
+
+Set your API keys as environment variables:
+
+```bash
+# Single keys
+export OPENROUTER_API_KEY=your_key_here
+export GEMINI_API_KEY=your_key_here
+export HUGGINGFACE_API_KEY=your_key_here
+
+# Multiple keys (comma-separated for rotation)
+export OPENROUTER_API_KEY=key1,key2,key3
+export GEMINI_API_KEY=key1,key2
+```
+
+### Docker Compose Configuration
+
+The `docker-compose.yml` includes:
+- Health checks for monitoring
+- Automatic restart policies
+- Port mapping (3000:3000)
+- Environment variable templates
+
+### Production Deployment
+
+For production, consider:
+- Using Docker secrets for API keys
+- Adding a reverse proxy (nginx)
+- Setting up monitoring and logging
+- Using multi-stage builds for smaller images
+
+---
+
 ## 🔍 TypeScript Development
 
 This project is built with TypeScript for better development experience and type safety.

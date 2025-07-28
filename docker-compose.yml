@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  llm-rotation-server:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      # Add your API keys as environment variables
+      # - OPENROUTER_API_KEY=your_key_here
+      # - GEMINI_API_KEY=your_key_here
+      # - HUGGINGFACE_API_KEY=your_key_here
+      # - MISTRAL_API_KEY=your_key_here
+      # - COHERE_API_KEY=your_key_here
+      # - NVIDIA_API_KEY=your_key_here
+      # - CHUTES_API_KEY=your_key_here
+      # - REQUESTY_API_KEY=your_key_here
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a reverse proxy for production
+  # nginx:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - llm-rotation-server
+  #   restart: unless-stopped
